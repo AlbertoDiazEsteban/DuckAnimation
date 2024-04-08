@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baby duck animation</title>
+    <link rel="shortcut icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%90%A3%3C%2Ftext%3E%3C%2Fsvg%3E" type="image/svg+xml">
+<style>
+
+:root {
+  --duck-speed: 1s;
+  --duck-speed-half: calc(var(--duck-speed) / 2);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  margin-top: 300px;
+  max-width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  min-width: 100%;
+  background-color: #aef56c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* mi pato*/
+.duck {
+  transform: rotate(-6deg);
+}
+
+.duck_inner {
+  display: flex;
+  max-width: 400px;
+  min-height: 337px;
+  flex-direction: column;
+  align-items: flex-end;
+  animation: duck-up-down var(--duck-speed-half) ease infinite;
+}
+@keyframes duck-up-down {
+  0%, 100% {
+    transform: translateY(0.4rem);
+  }
+  50% {
+    transform: translateY(0rem);
+  }
+}
+.duck_head {
+  width: 245px;
+  height: 147px;
+  border-radius: 100%;
+  background-color: #D6B9FF;
+  -moz-border-radius: 150px 150px 0px 0px;
+  -webkit-border-radius: 150px 150px 0px 0px;
+  border-radius: 150px 150px 0px 0px;
+}
+.duck_body {
+  margin-top: -10px;
+  width: 400px;
+  height: 200px;
+  background-color: #D6B9FF;
+  -moz-border-radius: 0px 0px 200px 200px;
+  -webkit-border-radius: 0px 0px 200px 200px;
+  border-radius: 15px 0px 200px 200px;
+}
+.wing {
+  position: absolute;
+  width: 214px;
+  height: 117px;
+  background-color: #A769FF;
+  border-radius: 20px 20px 150px 150px;
+  margin-top: 115px;
+  margin-right: 160px;
+  animation: wing 1s ease infinite;
+}
+@keyframes wing {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  25% {
+    transform: translate(-10%, -10%) rotate(15deg);
+  }
+}
+.eye {
+  position: absolute;
+  overflow: hidden;
+  background-color: #362835;
+  width: 50px;
+  height: 70px;
+  border-radius: 100%;
+  transform: rotate(-20deg);
+  margin-top: 52px;
+  margin-right: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: blink 10s forwards infinite;
+}
+.dot {
+  width: 20px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: white;
+}
+.dot-top {
+  margin-right: 10px;
+  transform: scale(0.9) rotate(20deg);
+}
+.dot-bottom {
+  margin-right: -10px;
+  transform: rotate(20deg);
+}
+.eye-shyne {
+  position: absolute;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+  background: #FFFF84;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 5px #FFFF84) saturate(120%);
+  transform: rotate(45deg) skew(15deg, 15deg) scaleY(1.1);
+}
+@keyframes blink {
+  0%, 4%, 15%, 20%, 30%, 34%, 39%, 43%, 60%, 64%, 100% {
+    width: 50px;
+    height: 70px;
+    margin-top: 52px;
+  }
+  2%, 18%, 32%, 41%, 62% {
+    margin-top: 87px;
+    width: 50px;
+    height: 1%;
+  }
+}
+.pico-top {
+  position: absolute;
+  background-color: #BAB2BF;
+  height: 90px;
+  width: 20px;
+  border-radius: 100%;
+  margin-top: 93px;
+  margin-right: -5px;
+}
+.pico {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: #BAB2BF;
+  border-radius: 20px;
+  transform: rotate(136deg) skew(15deg, 15deg);
+  margin-top: 88px;
+  margin-right: -35px;
+  z-index: -1;
+}
+.blush {
+  position: absolute;
+  width: 52px;
+  height: 32px;
+  background-color: #F993CF;
+  border-radius: 100%;
+  margin-top: 121px;
+  margin-right: 68px;
+  transform: rotate(25deg);
+}
+.hair { position: absolute; }
+.hair-1 {
+  width: 200px;
+  height: 80px;
+  border-radius: 10px 100px;
+  background: #D6B9FF;
+  margin-right: 50px;
+}
+.hair-2 {
+  width: 200px;
+  height: 80px;
+  border-radius: 10px 100px;
+  background: #D6B9FF;
+  margin-right: 0px;
+  margin-top: -100px;
+  transform: rotate(30deg) scale(0.7);
+}
+.pata {
+  z-index: 2;
+  margin-top: 270px;
+  margin-right: 150px;
+
+}
+.pata-1 {
+  position: absolute;
+  margin-top: 340px;
+  margin-left: 180px;
+  z-index: -1;
+  animation: foot-ans var(--duck-speed) linear infinite;
+}
+.pata-2 {
+  position: absolute;
+  margin-top: 340px;
+  margin-left: 180px;
+  z-index: -2;
+  filter: brightness(90%);
+  animation: foot-ans var(--duck-speed) var(--duck-speed-half) linear infinite;
+}
+@keyframes foot-ans {
+  0%, 100% {
+    transform: translate(0%, 20%) rotate(0deg);
+  }
+  20% {
+    transform: translate(-80%, 10%) rotate(20deg);
+  }
+  40% {
+    transform: translate(-50%, 0%) rotate(10deg);
+  }
+
+  60% {
+    transform: translate(100%, 0%) rotate(-20deg);
+  }
+}
+.leg {
+  background-color: #BAB2BF;
+  height: 110px;
+  width: 40px;
+  border-radius: 100px 100px 0px 0px;
+}
+.foot {
+  margin-left: -30px;
+  background-color: #BAB2BF;
+  height: 40px;
+  width: 140px;
+  border-radius: 100px;
+  z-index: 5;
+  background-color: #D9D9D9;
+  margin-top: -15px;
+}
+/* .bow {
+  position: absolute;
+  z-index: 10;
+  margin-right: 130px;
+  margin-top: -45px;
+  transform: rotate(45deg) scale(0.9);
+}
+.center {
+  position: absolute;
+  z-index: 10;
+  background-color: #F993CF;
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  margin-left: 8px;
+  margin-top: -80px;
+}
+.ribet-1 {
+  z-index: 10;
+  background-color: #FF5991;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  transform: rotate(45deg);
+}
+.ribet-2 {
+  margin-top: -5px;
+  z-index: 10;
+  background-color: #FF5991;
+  width: 60px;
+  height: 60px;
+  border-radius: 20px;
+  transform: rotate(45deg);
+}  */
+</style>
+</head>
+<body>
+      <!-- <div class="bow">
+        <div class="ribet-1"></div>
+        <div class="ribet-2"></div>
+        <div class="center"></div>
+      </div> -->
+
+
+    <div class="duck">
+      <div class="duck_inner">
+      <div class="hair">
+        <div class="hair-1"></div>
+        <div class="hair-2"></div>
+      </div>
+      <div class="blush"></div>
+      <div class="pico-top"></div>
+      <div class="pico"></div>
+      <div class="eye">
+        <div class="eye-shyne"></div>
+        <div class="dot dot-top"></div>
+        <div class="dot dot-bottom"></div>
+      </div>
+      <div class="wing"></div>
+      <div class="duck_head"></div>
+      <div class="duck_body"></div>
+      </div>
+    </div>
+    <div class="pata pata-1">
+      <div class="leg"></div>
+      <div class="foot"></div>
+    </div>
+    <div class="pata pata-2">
+      <div class="leg"></div>
+      <div class="foot"></div>
+    </div>
+
+
+
+
+</body>
+</html>
